@@ -1,6 +1,12 @@
 const cacheName = "calc";
 
-const cacheAssets = ["/", "/index.html", "/cal.css", "/cal.js"];
+const cacheAssets = [
+  "/",
+  "./index.html",
+  "./cal.css",
+  "./cal.js",
+  "./icons/icon_192.png",
+];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
