@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    margin: auto;
 }
 
 .main-container {
@@ -108,3 +108,11 @@ body {
         height: 60px;
     }
 }
+
+@media all and (display-mode: standalone) {
+    body {
+      max-width: 500px;
+      max-height: 640px;
+    }
+}
+  
