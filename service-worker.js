@@ -28,15 +28,25 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    fetch(e.request)
-      .then((res) => {
-        const resClone = res.clone();
-        caches.open(cacheName).then((cache) => {
-          cache.put(e.request, resClone);
-        });
-        return res;
-      })
-      .catch(() => caches.match(e.request).then((res) => res))
-  );
+  if (e.request.url.startsWith(self.location.origin)) {
+    e.respondWith(
+      fetch(e.request)
+        .then((res) => {
+          const resClone = res.clone();
+          caches.open(cacheName).then((cache) => {
+            cache.put(e.request, resClone);
+          });
+          return res;
+        })
+        .catch(() =>
+          caches.match(e.request).then((res) => {
+            if (res) {
+              return res;
+            } else {
+              return fetch(e.request);
+            }
+          })
+        )
+    );
+  }
 });
