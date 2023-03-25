@@ -1,7 +1,7 @@
 {
   "name": "Calculator",
   "short_name": "MyCalc",
-  "start_url": "/",
+  "start_url": "/calculator/",
   "display": "standalone",
   "theme_color": "lightsalmon",
   "background_color": "gray",
