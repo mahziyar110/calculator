@@ -1,10 +1,10 @@
 {
-  "name": "Calculator",
-  "short_name": "MyCalc",
+  "name": "AMZ Calculator",
+  "short_name": "AMZ Calc",
   "start_url": "/calculator/",
   "display": "standalone",
   "theme_color": "lightsalmon",
-  "background_color": "gray",
+  "background_color": "white",
   "icons": [
     {
       "src": "./icons/icon_192.png",
